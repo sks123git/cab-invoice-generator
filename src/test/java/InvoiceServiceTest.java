@@ -33,4 +33,12 @@ public class InvoiceServiceTest {
         double result = invoiceGenerator.calculateFare(ride1);
         Assert.assertEquals(30.0, result, 0.0);
     }
+
+    @Test
+    public void givenMultipleRides_ShouldReturnInvoiceSummaryFromRideRepository() {
+        Ride[] ride1 = {new Ride(2.0, 5),
+                new Ride(0.1,1)};
+        InvoiceSummary result = invoiceGenerator.calculateFare(1,ride1);
+        Assert.assertEquals(30.0, result.getTotalFare(), 0.0);
+    }
 }

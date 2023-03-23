@@ -5,4 +5,9 @@ public class Ride {
         this.distance = distance;
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Distance: "+ this.distance + " Time: " + this.time;
+    }
 }
